@@ -1,1 +1,7 @@
-# portfolio-v1
+# Portfolio
+
+# Made by
+
+- Gatsby
+- Strapi
+- Scss
