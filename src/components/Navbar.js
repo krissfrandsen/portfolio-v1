@@ -7,20 +7,17 @@ import { Link } from "gatsby";
 
 const Navbar = () => {
   return (
-    <header className="nav-wrapper">
-      <div className="nav-center">
-        <div className="nav-header">
-          <div className="logo">
-            <Link to="/">
-              <GiSamusHelmet />
-              KRISS
-            </Link>
+    <header className="header">
+      <div className="header__wrapper">
+        <div className="header__wrapper__center">
+          <div>
+            <Link to="/">KRISS</Link>
           </div>
-          <button type="button" className="toggle-btn">
+          <button type="button">
             <FaAlignRight />
           </button>
         </div>
-        <div className="nav-links">
+        <div className="header__wrapper__links">
           {pageLinks.map((link) => {
             return (
               <Link key={link.id} to={link.url}>
