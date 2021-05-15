@@ -1,20 +1,19 @@
-$font: "Ariel", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
 
-$font-italic: "Snell Roundhand", -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
-//Colors
-$color-primary: #55c57a;
-$color-primary-light: #2ba84a;
-$color-primary-dark: #248232;
-$color-grey-dark: #2d3a3a;
-
-$color-highlight: #ff4d2f;
-$color-white: #e6e6e6;
+$color-primary: #564787;
+$color-primary-light: #dbcbd8;
+$color-secondary: #101935;
+$color-secondary-light: #9ad4d6;
+$color-white: #f2fdff;
+$color-grey: #d7dedc;
+$color-grey-dark: #cfcfcd;
 $color-black: #000;
 
 $transition: all 0.3s linear;
+$spacing: 0.2rem;
+$radius: 1.5rem;
 
 *,
 ::after,
@@ -24,31 +23,114 @@ $transition: all 0.3s linear;
   box-sizing: border-box;
 }
 
-html,
 body {
   line-height: 1.5;
   font-size: 0.875rem;
   margin-top: 5rem;
-  font-family: $font;
-  background: $color-white;
+  font-family: $font-secondary;
 }
 
-.container {
-  width: 1640px;
-  min-width: 1640px;
-  margin: 0 auto;
-  @media (max-width: 1440px) {
-    width: 1280px;
-    min-width: 1280px;
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: $spacing;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: $font-primary;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
   }
-  @media (max-width: 1280px) {
-    width: 976px;
-    min-width: 976px;
+  h2 {
+    font-size: 2.5rem;
   }
-  @media (max-width: 976px) {
-    width: 768px;
-    min-width: 768px;
+  h3 {
+    font-size: 1.75rem;
   }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+// .container {
+//   width: 1640px;
+//   min-width: 1640px;
+//   margin: 0 auto;
+//   @media (max-width: 1440px) {
+//     width: 1280px;
+//     min-width: 1280px;
+//   }
+//   @media (max-width: 1280px) {
+//     width: 976px;
+//     min-width: 976px;
+//   }
+//   @media (max-width: 976px) {
+//     width: 768px;
+//     min-width: 768px;
+//   }
+// }
+
+//Button
+.button {
+  text-transform: uppercase;
+  background: $color-white;
+  padding: 0.9rem 1.5rem;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  font-weight: 700;
+  -webkit-transition: $transition;
+  transition: $transition;
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: $radius;
+  &:hover {
+    color: $color-primary-light;
+    background: $color-primary;
+  }
+}
+
+//Underline
+.underline {
+  width: 5rem;
+  height: 0.1rem;
+  background-color: $color-secondary;
 }
 
 //Header
@@ -61,42 +143,40 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: $color-white;
   z-index: 10;
   @media (min-width: 992px) {
     background: transparent;
   }
   &__wrapper {
     width: 90vw;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
     &__center {
       width: 100%;
-      margin-bottom: 0.375rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       a {
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 36px;
         text-decoration: none;
         letter-spacing: 0.5px;
-        color: $color-black;
+        color: $color-white;
         &:hover {
-          color: $color-highlight;
+          box-shadow: 0px 1px $color-white;
         }
       }
       button {
         font-size: 2rem;
         background: transparent;
         border-color: transparent;
-        color: $color-black;
+        color: $color-white;
         cursor: pointer;
         transition: $transition;
         &:hover {
-          color: $color-highlight;
+          color: $color-primary;
         }
       }
       @media (min-width: 768px) {
@@ -105,23 +185,21 @@ body {
         }
       }
     }
-
     &__links {
       display: none;
       a {
         padding: 0 1rem;
         text-decoration: none;
         letter-spacing: 0.1px;
-        text-transform: uppercase;
         font-weight: 200;
-        font-size: 0.8rem;
-        color: $color-black;
+        font-size: 1.1rem;
+        color: $color-white;
         &last-child {
           padding-right: 0px;
         }
         cursor: pointer;
         &:hover {
-          box-shadow: 0px 1px $color-black;
+          box-shadow: 0px 1px $color-white;
         }
       }
       @media (min-width: 768px) {
@@ -130,13 +208,74 @@ body {
         a {
           margin-right: 2rem;
           text-transform: uppercase;
-          color: $color-black;
+          color: $color-white;
           font-weight: bold;
           letter-spacing: 1.5px;
           transition: $transition;
           padding: 0.5rem 0;
         }
       }
+    }
+  }
+}
+
+//Hero
+
+.hero {
+  background: url("../assets/images/hero.jpg") center center/cover no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5rem;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+  color: $color-white;
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    &-thin {
+      padding-right: 1rem;
+      font-weight: 100;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    div {
+      background-color: $color-white;
+    }
+    h4 {
+      margin: 0 1rem;
+      font-weight: 200;
+    }
+  }
+  .button {
+    margin-top: 1.6rem;
+
+    color: $color-secondary;
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+}
+
+//Social Links
+.social__links {
+  margin-top: 2rem;
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  &-item {
+    font-size: 1.75rem;
+    color: $color-white;
+    transition: $transition;
+    &:hover {
+      color: $color-primary-light;
     }
   }
 }

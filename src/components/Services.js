@@ -1,8 +1,12 @@
-import React from "react"
-import Title from "./Title"
-import services from "../constants/services"
+import React from "react";
+import Title from "./Title";
+import services from "../constants/services";
 const Services = () => {
-  return <h2>services component</h2>
-}
+  return (
+    <section className="section background-grey">
+      <Title title="services"></Title>
+    </section>
+  );
+};
 
-export default Services
+export default Services;

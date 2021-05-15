@@ -10,9 +10,9 @@ const Navbar = () => {
     <header className="header">
       <div className="header__wrapper">
         <div className="header__wrapper__center">
-          <div>
-            <Link to="/">KRISS</Link>
-          </div>
+          <h1>
+            <Link to="/">kriss</Link>
+          </h1>
           <button type="button">
             <FaAlignRight />
           </button>

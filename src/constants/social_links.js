@@ -1,27 +1,21 @@
 import React from "react";
-import {
-  FaFacebookSquare,
-  FaLinkedin,
-  FaDribbbleSquare,
-  FaBehanceSquare,
-  FaTwitterSquare,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const data = [
   {
     id: 1,
-    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.facebook/krissfrandsen.com",
+    icon: <FaFacebookF></FaFacebookF>,
+    url: "https://www.facebook.com/krissfrandsen",
   },
   {
     id: 2,
-    icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.linkedin.com/krissfrandsen",
+    icon: <FaLinkedinIn></FaLinkedinIn>,
+    url: "https://www.linkedin.com/in/kriss-frandsen/",
   },
   {
     id: 3,
-    icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
-    url: "https://www.twitter.com/krissfrandsen",
+    icon: <FaInstagram></FaInstagram>,
+    url: "https://www.instagram.com/iamkrissyness/",
   },
 ];
 
